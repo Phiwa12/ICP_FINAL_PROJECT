@@ -59,6 +59,17 @@ CREATE TABLE Enrollments (
     FOREIGN KEY (CourseID) REFERENCES Courses(CourseID) ON DELETE CASCADE
 );
 
+CREATE TABLE AuditTrail (
+    AuditID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID VARCHAR(20),
+    Action VARCHAR(255),
+    ActionDate DATETIME
+);
+
+CREATE INDEX IX_AuditTrail_UserID ON AuditTrail(UserID);
+CREATE INDEX IX_AuditTrail_ActionDate ON AuditTrail(ActionDate);
+
+
 -- Stored Procedure for Enrolling a Student in a Course
 DELIMITER //
 
@@ -91,3 +102,6 @@ BEGIN
 END //
 
 DELIMITER ;
+
+   
+

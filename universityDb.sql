@@ -13,7 +13,7 @@ CREATE TABLE Users (
     LastName VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL UNIQUE,
     Password VARCHAR(100) NOT NULL,
-    UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL -- Replaced CHECK with ENUM for UserType
+    UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL -- 
 );
 
 -- Students Table: Stores student-specific information
@@ -27,7 +27,7 @@ CREATE TABLE Students (
     FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 
--- Faculty Table: Stores faculty-specific information
+-- Faculty Table: Stores faculty-c information
 CREATE TABLE Faculty (
     FacultyID VARCHAR(20) PRIMARY KEY,
     UserID VARCHAR(20) UNIQUE NOT NULL,
@@ -40,10 +40,10 @@ CREATE TABLE Faculty (
 CREATE TABLE Courses (
     CourseID VARCHAR(20) PRIMARY KEY,
     CourseName VARCHAR(100) NOT NULL,
-    Credits INT NOT NULL CHECK (Credits > 0), -- Note: MySQL doesn't enforce CHECK, use INT > 0 constraint in app logic
+    Credits INT NOT NULL CHECK (Credits > 0), -- 
     FacultyID VARCHAR(20),
     Semester VARCHAR(20),
-    MaxEnrollment INT NOT NULL, -- Note: MySQL doesn't enforce CHECK, so validate in app
+    MaxEnrollment INT NOT NULL, -- N
     FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID) ON DELETE SET NULL
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE Enrollments (
     StudentID VARCHAR(20) NOT NULL,
     CourseID VARCHAR(20) NOT NULL,
     Semester VARCHAR(20),
-    Grade DECIMAL(4,2), -- Assuming a GPA scale; use app logic to enforce range
+    Grade DECIMAL(4,2), 
     EnrollmentDate DATE,
     FOREIGN KEY (StudentID) REFERENCES Students(StudentID) ON DELETE CASCADE,
     FOREIGN KEY (CourseID) REFERENCES Courses(CourseID) ON DELETE CASCADE

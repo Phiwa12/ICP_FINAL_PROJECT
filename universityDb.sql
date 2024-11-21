@@ -1,96 +1,100 @@
-drop database if exists  UniversityDB;
-#Create database
+DROP DATABASE IF EXISTS UniversityDB;
 
-SHOW DATABASES;
+-- Create Database
 CREATE DATABASE UniversityDB;
-SHOW DATABASES;
 USE UniversityDB;
 
--- Users Table: Stores all users in the system (students, faculty, etc.)
+-- Users Table
 CREATE TABLE Users (
-    UserID VARCHAR(20) PRIMARY KEY,
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL UNIQUE,
     Password VARCHAR(100) NOT NULL,
-    UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL -- 
+    UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL
 );
 
--- Students Table: Stores student-specific information
+-- Students Table
 CREATE TABLE Students (
-    StudentID VARCHAR(20) PRIMARY KEY,
-    UserID VARCHAR(20) UNIQUE NOT NULL,
-    DateOfBirth DATE,
-    Major VARCHAR(50),
-    EnrollmentDate DATE,
-    Picture LONGBLOB, -- Changed VARBINARY(MAX) to LONGBLOB for MySQL compatibility
+    UserID INT PRIMARY KEY,
+    DateOfBirth DATE NOT NULL,
+    Major ENUM('BA', 'CS', 'ECO', 'ME', 'EE', 'CE') NOT NULL,
+    EnrollmentDate DATE NOT NULL,
+    Picture LONGBLOB,
     FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 
--- Faculty Table: Stores faculty-c information
+-- Faculty Table
 CREATE TABLE Faculty (
-    FacultyID VARCHAR(20) PRIMARY KEY,
-    UserID VARCHAR(20) UNIQUE NOT NULL,
-    Department VARCHAR(50),
+    UserID INT PRIMARY KEY,
+    Department ENUM('Engineering', 'CSIS', 'Humanities') NOT NULL,
     DateOfAppointment DATE,
     FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
 );
 
--- Courses Table: Stores course information
+-- Courses Table
 CREATE TABLE Courses (
-    CourseID VARCHAR(20) PRIMARY KEY,
+    CourseID INT AUTO_INCREMENT PRIMARY KEY,
     CourseName VARCHAR(100) NOT NULL,
-    Credits INT NOT NULL CHECK (Credits > 0), -- 
-    FacultyID VARCHAR(20),
-    Semester VARCHAR(20),
-    MaxEnrollment INT NOT NULL, -- N
-    FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID) ON DELETE SET NULL
+    Credits DOUBLE NOT NULL CHECK (Credits > 0),
+    Semester ENUM('Spring', 'Fall') NOT NULL,
+    MaxEnrollment INT NOT NULL
 );
 
--- Enrollments Table: Stores information about enrollments
+-- Linking Courses to Faculty
+CREATE TABLE CourseFaculty (
+    UserID INT NOT NULL,
+    CourseID INT NOT NULL,
+    PRIMARY KEY (UserID, CourseID),
+    FOREIGN KEY (UserID) REFERENCES Faculty(UserID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);
+
+-- Enrollments Table
 CREATE TABLE Enrollments (
-    EnrollmentID VARCHAR(20) PRIMARY KEY,
-    StudentID VARCHAR(20) NOT NULL,
-    CourseID VARCHAR(20) NOT NULL,
-    Semester VARCHAR(20),
-    Grade DECIMAL(4,2), 
-    EnrollmentDate DATE,
-    FOREIGN KEY (StudentID) REFERENCES Students(StudentID) ON DELETE CASCADE,
+    EnrollmentID VARCHAR(36) PRIMARY KEY,
+    StudentID INT NOT NULL,
+    CourseID INT NOT NULL,
+    Semester ENUM('Spring', 'Fall') NOT NULL,
+    Grade ENUM('A+', 'A', 'B+', 'B', 'C+', 'C', 'D+', 'D', 'F') DEFAULT NULL,
+    EnrollmentDate DATE NOT NULL,
+    FOREIGN KEY (StudentID) REFERENCES Students(UserID) ON DELETE CASCADE,
     FOREIGN KEY (CourseID) REFERENCES Courses(CourseID) ON DELETE CASCADE
 );
 
+-- Audit Trail
 CREATE TABLE AuditTrail (
     AuditID INT AUTO_INCREMENT PRIMARY KEY,
-    UserID VARCHAR(20),
+    UserID INT,
     Action VARCHAR(255),
-    ActionDate DATETIME
+    ActionDate DATETIME,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE INDEX IX_AuditTrail_UserID ON AuditTrail(UserID);
 CREATE INDEX IX_AuditTrail_ActionDate ON AuditTrail(ActionDate);
 
-
--- Stored Procedure for Enrolling a Student in a Course
+-- Stored Procedure for Enrolling a Student
 DELIMITER //
 
 CREATE PROCEDURE sp_EnrollStudent(
-    IN StudentID VARCHAR(20),
-    IN CourseID VARCHAR(20),
-    IN Semester VARCHAR(20)
+    IN StudentID INT,
+    IN CourseID INT,
+    IN Semester ENUM('Spring', 'Fall')
 )
 BEGIN
     DECLARE CurrentEnrollment INT DEFAULT 0;
     DECLARE MaxEnrollment INT DEFAULT 0;
 
-    -- Get current enrollment count for the course
+    -- Get current enrollment count
     SELECT COUNT(*) INTO CurrentEnrollment
     FROM Enrollments
-    WHERE CourseID = CourseID AND Semester = Semester;
+    WHERE Enrollments.CourseID = CourseID AND Enrollments.Semester = Semester;
 
     -- Get maximum enrollment allowed
     SELECT MaxEnrollment INTO MaxEnrollment
     FROM Courses
-    WHERE CourseID = CourseID;
+    WHERE Courses.CourseID = CourseID;
 
     -- Check if capacity allows enrollment
     IF CurrentEnrollment < MaxEnrollment THEN
@@ -102,6 +106,3 @@ BEGIN
 END //
 
 DELIMITER ;
-
-   
-

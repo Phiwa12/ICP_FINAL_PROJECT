@@ -13,7 +13,10 @@ CREATE TABLE Users (
     Password VARCHAR(100) NOT NULL,
     UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL
 );
-
+Create table admin(
+    userId int primary key,
+    foreign key (userId) references Users(UserId) on delete cascade
+)
 -- Students Table
 CREATE TABLE Students (
     UserID INT PRIMARY KEY,

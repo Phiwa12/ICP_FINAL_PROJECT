@@ -9,6 +9,7 @@ CREATE TABLE Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
     Email VARCHAR(100) NOT NULL UNIQUE,
     Password VARCHAR(100) NOT NULL,
     UserType ENUM('Student', 'Faculty', 'Admin') NOT NULL
@@ -20,7 +21,6 @@ Create table admin(
 -- Students Table
 CREATE TABLE Students (
     UserID INT PRIMARY KEY,
-    DateOfBirth DATE NOT NULL,
     Major ENUM('BA', 'CS', 'ECO', 'ME', 'EE', 'CE') NOT NULL,
     EnrollmentDate DATE NOT NULL,
     Picture LONGBLOB,

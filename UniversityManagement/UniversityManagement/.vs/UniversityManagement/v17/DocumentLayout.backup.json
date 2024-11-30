@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\UniversityManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:ManageFinances.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:PayFees.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:PayFees.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:ManageFinances.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageCourseMaterials.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:ManageCourseMaterials.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\FacultyManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:FacultyManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|C:\\Users\\user\\source\\repos\\UniversityManagement\\Generatereport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{B7342128-53E4-4700-BBFA-4357C15C8619}|UniversityManagement.vcxproj|solutionrelative:Generatereport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 248,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PayFees.h",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h",
+              "RelativeDocumentMoniker": "PayFees.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h",
+              "RelativeToolTip": "PayFees.h",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAAQBAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T22:05:00.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PayFees.h [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h",
+              "RelativeDocumentMoniker": "PayFees.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\PayFees.h [Design]",
+              "RelativeToolTip": "PayFees.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T22:04:58.5Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageFinances.h",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h",
+              "RelativeDocumentMoniker": "ManageFinances.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h",
+              "RelativeToolTip": "ManageFinances.h",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAOoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T21:52:54.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManageFinances.h [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h",
+              "RelativeDocumentMoniker": "ManageFinances.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageFinances.h [Design]",
+              "RelativeToolTip": "ManageFinances.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T21:52:52.58Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManageCourseMaterials.h [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageCourseMaterials.h",
+              "RelativeDocumentMoniker": "ManageCourseMaterials.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\ManageCourseMaterials.h [Design]",
+              "RelativeToolTip": "ManageCourseMaterials.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T21:51:30.092Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FacultyManagement.h [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\FacultyManagement.h",
+              "RelativeDocumentMoniker": "FacultyManagement.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\FacultyManagement.h [Design]",
+              "RelativeToolTip": "FacultyManagement.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T21:51:19.284Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Generatereport.h [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversityManagement\\Generatereport.h",
+              "RelativeDocumentMoniker": "Generatereport.h",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UniversityManagement\\Generatereport.h [Design]",
+              "RelativeToolTip": "Generatereport.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-30T21:51:11.481Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 152,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
